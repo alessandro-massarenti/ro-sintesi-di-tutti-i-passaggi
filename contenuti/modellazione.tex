@@ -16,7 +16,8 @@
     \item definire la funzione obiettivo;
     \item iniziare a stendere i vincoli non nella parte dei "tenendo conto che:";
     \item iniziare a stendere almeno un vincolo dell'elenco puntato che propone il professore\pro{Almeno uno o due di questi vincoli sono comodi per scrivere il resto del modello};
-    \item Scrivere il resto dei vincoli.
+    \item Scrivere il resto dei vincoli;
+    \item Scrivere i domini.
 \end{enumerate}
 
 \subsubsection{Individuazione delle variabili decisionali}
@@ -33,5 +34,37 @@ La funzione obiettivo \textbf{DEVE} essere lineare\footnote{Se non è lineare, a
 \subsubsection{Vincoli}
 
 Anche i vincoli \textbf{DEVONO} essere lineari.
+
+\paragraph{I vincoli logici} Se ho vincoli logici, ad esempio "posso decidere se fare X cosa" devo inserire una variabile binaria. Per questi vincoli devo:
+\begin{itemize}
+    \item definirli nel dominio delle varibili binarie;
+    \item attivare\footnote{Linearizzare un modello evitando i termini quadratici.} la variabile utilizzando il \textit{Big-M}
+\end{itemize} 
+
+\paragraph{Costi fissi} In questo caso va aggiunto un termine moltiplicativo a tutte le variabili decisionali legate per quantità.
+\paragraph{Almeno tot}\footnote{Almeno un treno tra gli $y$ treni deve partire $\sum_{i=1}^{n}y_i >= 1$ } Se il vincolo è logico uso $y_1+y_2+y_n >= \text{Il valore del vincolo}$ con $y$ variabile binaria legata a \textit{Big-M}.
+
+Se il vincolo è di quantità uso: $x_1+x_2+x_n >= \text{Il valore del vincolo}$ con $x$ variabile di quantità.
+
+\paragraph{Al massimo tot} Se il vincolo è logico uso $y_1+y_2+y_n <= \text{Il valore del vincolo}$ con $y$ variabile binaria legata a \textit{Big-M}.
+
+Se il vincolo è di quantità uso $x_1+x_2+x_n <= \text{Il valore del vincolo}$ con $x$ variabile di quantità.
+
+\subsubsection{Consigli ulteriori di Gabriel}
+\begin{itemize}
+    \item 
+    Se si sta scrivendo un vincolo e non si capisce bene come scriverlo, probabilmente può essere scritto più semplicemente, anche ripensando alle variabili che lo compongono;
+    \item risemplificare e considerare i punti detti è molto utile.
+\end{itemize}
+
+
+\subsubsection{Consigli di Ale}
+
+\begin{itemize}
+    \item Rileggere un paio di volte il problema prima di scrivere qualsiasi cosa;
+    \item quando si scrive un vincolo cercare di cancellare a matita la parte che lo descrive per evitare di ripassarci sopra prima della lettura finale;
+    \item rileggere tutto alla fine per vedere se si è coperto tutto e per controllare di non aver aggiunto situazioni non lineari involontariamente.
+\end{itemize}
+
 
 
