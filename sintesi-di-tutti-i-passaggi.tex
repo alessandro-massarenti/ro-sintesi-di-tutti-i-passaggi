@@ -1,0 +1,18 @@
+\documentclass{article}[12pt]
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={15.5cm, 23cm}]{geometry}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\usepackage{bigfoot}
+\DeclareNewFootnote{default}
+\DeclareNewFootnote{B}[fnsymbol]
+\DeclareNewFootnote{C}[Roman]
+\MakeSortedPerPage{footnoteB}
+\newcommand{\pro}[1]{\footnoteB{\textit{dice il prof}: #1}}
+\newcommand{\gab}[1]{\footnoteC{\textit{consiglia Gabriel}: #1}}
+
+\begin{document}
+\input{contenuti/modellazione}
+\end{document}
